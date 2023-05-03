@@ -28,9 +28,11 @@
                         <!--  Website Title -->
                         <h1>WebMarks</h1>
 
-                        <!-- Input Bar -->
+    <div class="container">
+                            
+                            <!-- PAGES SECTION -->
     <div class="form-outline col-md-4 mx-auto position-relative">
-        <label class="form-label" for="typeURL">Add Favorite Websites</label>
+        <label class="form-label" for="typeURL">Pages</label>
         <input type="url" id="typeURL" class="form-control" placeholder="URL input" />
 
                         <!-- Notification Bar -->
@@ -43,6 +45,24 @@
             <div class="container border rounded-3 mt-3">
                 <ul id="favoriteList" class="list-group list-group-flush"></ul>
             </div>
+    </div>
+                            <!-- GOAL SECTION -->
+    <div class="form-outline col-md-4 mx-auto position-relative">
+        <label class="form-label" for="goalInput">Goals</label>
+        <input type="text" id="goalInput" class="form-control" placeholder="Enter your goals" />
+        
+        <!-- Notification Bar -->
+        <div class="notification-container" id="notification-container"></div>
+        
+        <!-- Add Button -->
+        <button type="button" class="btn btn-primary mt-3 addButton" onclick="addGoal()">Add Goal</button>
+    
+        <!-- Goal List -->
+        <div class="container border rounded-3 mt-3">
+            <ul id="goalList" class="list-group list-group-flush"></ul>
+        </div>
+    </div>
+    
     </div>
 
   <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>

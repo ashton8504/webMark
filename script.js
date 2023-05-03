@@ -225,51 +225,90 @@ function getFavorites() {
   return favorites;
 }
 
-//Section for mobile phones not working
-// document.addEventListener("DOMContentLoaded", () => {
-//   const list = document.querySelector("#favoriteList");
-//   const listItems = document.querySelectorAll("li");
+// !!! GOAL SECTION !!! //
+document
+  .getElementById("goalInput")
+  .addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      addGoal();
+    }
+  });
 
-//   let order = JSON.parse(localStorage.getItem("order")) || [];
+$(function () {
+  $("#goalList").sortable();
+  $("#goalList").disableSelection();
+});
 
-//   listItems.forEach(item => {
-//     item.draggable = true;
+document.addEventListener("DOMContentLoaded", function () {
+  loadGoals();
+});
 
-//     item.addEventListener("touchstart", e => {
-//       e.preventDefault();
-//       e.dataTransfer.setData("text/plain", e.target.id);
-//       window.navigator.vibrate(50);
-//     });
+function addGoal() {
+  const goalInput = document.getElementById("goalInput").value;
 
-//     item.addEventListener("touchmove", e => {
-//       e.preventDefault();
-//       const target = document.elementFromPoint(
-//         e.touches[0].clientX,
-//         e.touches[0].clientY
-//       );
-//       if (target && target !== e.target) {
-//         const rect = target.getBoundingClientRect();
-//         const threshold = rect.top + rect.height / 2;
-//         const parent = e.target.parentElement;
-//         if (e.touches[0].clientY < threshold) {
-//           parent.insertBefore(e.target, target);
-//         } else {
-//           parent.insertBefore(e.target, target.nextSibling);
-//         }
-//       }
-//     });
+  if (goalInput.trim() !== "") {
+    const goal = {
+      id: Date.now(),
+      text: goalInput,
+    };
 
-//     item.addEventListener("touchend", e => {
-//       const order = [];
-//       list.querySelectorAll("li").forEach((item, index) => {
-//         order.push(item.id);
-//       });
-//       localStorage.setItem("order", JSON.stringify(order));
-//     });
+    addGoalToUI(goal);
+    saveGoal(goal);
 
-//     const index = order.indexOf(item.id);
-//     if (index > -1) {
-//       list.insertBefore(item, list.children[index]);
-//     }
-//   });
-// });
+    document.getElementById("goalInput").value = "";
+
+    const notificationContainer = document.getElementById(
+      "goalNotificationContainer"
+    );
+    notificationContainer.innerHTML = "Goal added successfully!";
+    notificationContainer.className = "notification-container success";
+  } else {
+    let notificationContainer = document.getElementById(
+      "goalNotificationContainer"
+    );
+    notificationContainer.innerHTML = "Please enter a valid goal.";
+    notificationContainer.className = "notification-container error";
+  }
+}
+
+function addGoalToUI(goal) {
+  const listItem = document.createElement("li");
+  listItem.className =
+    "list-group-item list-group-item-action d-flex flex-column align-items-center";
+  listItem.setAttribute("data-id", goal.id);
+
+  const textElement = document.createElement("span");
+  textElement.className = "goal-text";
+  textElement.textContent = goal.text;
+  listItem.appendChild(textElement);
+
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "btn btn-danger btn-sm delete-button";
+  deleteButton.innerHTML = "Delete";
+  deleteButton.addEventListener("click", function () {
+    deleteGoal(goal.id);
+    listItem.remove();
+  });
+  listItem.appendChild(deleteButton);
+
+  document.getElementById("goalList").appendChild(listItem);
+}
+
+function saveGoal(goal) {
+  let goals = JSON.parse(localStorage.getItem("goals")) || [];
+  goals.push(goal);
+  localStorage.setItem("goals", JSON.stringify(goals));
+}
+
+function loadGoals() {
+  let goals = JSON.parse(localStorage.getItem("goals")) || [];
+  for (let i = 0; i < goals.length; i++) {
+    addGoalToUI(goals[i]);
+  }
+}
+
+function deleteGoal(id) {
+  let goals = JSON.parse(localStorage.getItem("goals")) || [];
+  goals = goals.filter(goal => goal.id !== id);
+  localStorage.setItem("goals", JSON.stringify(goals));
+}
