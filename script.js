@@ -302,8 +302,13 @@ function saveGoal(goal) {
 
 function loadGoals() {
   let goals = JSON.parse(localStorage.getItem("goals")) || [];
+  const goalList = document.getElementById("goalList");
   for (let i = 0; i < goals.length; i++) {
-    addGoalToUI(goals[i]);
+    const goalId = goals[i].id;
+    // Check if goal already exists in the UI
+    if (!goalList.querySelector(`[data-id='${goalId}']`)) {
+      addGoalToUI(goals[i]);
+    }
   }
 }
 
