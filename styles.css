@@ -85,9 +85,12 @@ h1 {
   .light-mode #mode-toggle {
     background-color: #333333;
   }
-  
-  
 
+  .dark-mode .list-group-item {
+    background-color: slategray;
+    color: #fff;
+  }
+  
 /* Add Button Style */
 
 .addButton {
@@ -191,16 +194,16 @@ ul#favoriteList li {
 
 ul#goalList li:hover,
 ul#favoriteList li:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 /* Animation */
 @keyframes fadeOut {
   from {
-    opacity: 1;
+    opacity: 10;
   }
   to {
-    opacity: 0;
+    opacity: 40;
   }
 }
 
@@ -209,6 +212,3 @@ ul#favoriteList li:hover {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-
-
-  
