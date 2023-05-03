@@ -31,7 +31,7 @@ h1 {
   margin: 0 auto;
   text-align: center;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 5px;
 }
 
@@ -47,6 +47,12 @@ h1 {
   color: #ffffff;
 }
 
+/* Add Button Style */
+
+.addButton {
+    width: 190px;
+  }
+  
 /* List Styles */
 
 ul#favoriteList {
