@@ -109,11 +109,6 @@ ul#favoriteList {
   transition: all 0.3s ease;
 }
 
-.delete-button:hover {
-  background-color: #c82333;
-  cursor: pointer;
-}
-
 /* List reorder animation */
 ul#favoriteList li {
   list-style: none;
@@ -144,24 +139,3 @@ ul#favoriteList li:hover {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-
-/* Styles for notifaction bar */
-
-.notification-container {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    z-index: 9999;
-  }
-  
-  .notification {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    color: #fff;
-    border-radius: 5px;
-  }
-  

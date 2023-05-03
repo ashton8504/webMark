@@ -31,7 +31,7 @@ function addFavorite() {
 
   if (websiteUrl === "") {
     const notification = document.createElement("div");
-    notification.classList.add("alert", "alert-danger");
+    notification.classList.add("alert", "alert-primary");
     notification.textContent = "Please enter a website URL";
 
     const container = document.getElementById("notification-container");
