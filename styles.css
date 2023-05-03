@@ -18,11 +18,6 @@ body {
   border-radius: 5px;
 }
 
-.container-border {
-    border: 3px pink solid ;
-}
-
-
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -61,11 +56,26 @@ h1 {
     color: #517ea5;
   }
   
-
   .light-mode .form-outline {
     border-color: #333333;
     color: #517ea5;
   }
+  
+  /* Styling for button in dark mode vs light mode */
+
+  #mode-toggle {
+    background-color: #333333;
+    color: white;
+  }
+  
+  .dark-mode #mode-toggle {
+    background-color: #517ea5;
+  }
+  
+  .light-mode #mode-toggle {
+    background-color: #333333;
+  }
+  
   
 
 /* Add Button Style */

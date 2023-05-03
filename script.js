@@ -4,6 +4,13 @@ button.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
   document.body.classList.toggle("light-mode");
 
+  // Update the text of the button based on the current mode
+  if (document.body.classList.contains("dark-mode")) {
+    button.textContent = "Light Mode";
+  } else {
+    button.textContent = "Dark Mode";
+  }
+
   // Store the selected mode in local storage
   if (typeof Storage !== "undefined") {
     localStorage.setItem(
@@ -18,9 +25,10 @@ if (typeof Storage !== "undefined") {
   const storedMode = localStorage.getItem("mode");
   if (storedMode === "dark") {
     document.body.classList.add("dark-mode");
+    button.textContent = "Light Mode";
   } else if (storedMode === "light") {
-    // add this block
     document.body.classList.add("light-mode");
+    button.textContent = "Dark Mode";
   }
 }
 
