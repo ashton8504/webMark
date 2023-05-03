@@ -2,6 +2,7 @@
 const button = document.getElementById("mode-toggle");
 button.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("light-mode");
 
   // Store the selected mode in local storage
   if (typeof Storage !== "undefined") {
@@ -17,6 +18,9 @@ if (typeof Storage !== "undefined") {
   const storedMode = localStorage.getItem("mode");
   if (storedMode === "dark") {
     document.body.classList.add("dark-mode");
+  } else if (storedMode === "light") {
+    // add this block
+    document.body.classList.add("light-mode");
   }
 }
 
