@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-9JN7dRCn+bMPb/8p+eT6kE/bn0sU6NnQ6Z39C9rvV7d0P+YcYavBv1tK/M1CrDtgw0z0MkklvZep9XVNMp/dFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <title>Webmarks</title>
+
+</head>
+<body>
+  <!--  Dark/Light Mode Button -->
+  <div class="container-fluid ">
+    <div class="row justify-content-end">
+      <div class="col-lg-1  mt-3">
+        <button id="mode-toggle" type="button" class="btn btn-dark">Dark/Light Mode</button>
+      </div>
+    </div>
+  </div>
+                        <!--  Website Title -->
+                        <h1>Webmarks</h1>
+
+                        <!-- Input Bar -->
+    <div class="form-outline col-md-4 mx-auto position-relative">
+        <label class="form-label" for="typeURL">Add Favorite Websites</label>
+        <input type="url" id="typeURL" class="form-control" placeholder="URL input" />
+
+                        <!-- Notification Bar -->
+        <div class="notification-container" id="notification-container"></div>
+                
+                        <!-- Add Button -->
+        <button type="button" class="btn btn-primary mt-3" onclick="addFavorite()">Add</button>
+
+                    <!-- Our Favorite List -->
+            <div class="container border rounded-3 mt-3">
+                <ul id="favoriteList" class="list-group list-group-flush"></ul>
+            </div>
+    </div>
+
+
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
