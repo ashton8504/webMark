@@ -29,11 +29,13 @@ h1 {
   width: 18%;
   margin: 0 auto;
   font-family: monospace, sans-serif;
+  text-shadow: 1px 1px 1px #000, 1px 1px 2.5px rgb(210, 210, 246);
 }
 
 .form-label {
     font-size: 40px;
     font-family: monospace, sans-serif;
+    text-shadow: 1px 1px 1px #000, 1px 1px 2.4px rgb(210, 210, 246)
 }
 
 footer {

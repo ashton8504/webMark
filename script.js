@@ -34,26 +34,31 @@ if (typeof Storage !== "undefined") {
 
 // Adding URL's to list
 // Adding URL's to list
+let notificationShown = false;
+
 function addFavorite() {
   let urlInput = document.getElementById("typeURL").value;
-
+  document.getElementById("typeURL").value = "";
   //if user doesnt input a valid website a message will appear
   const websiteInput = document.getElementById("typeURL");
   const websiteUrl = websiteInput.value.trim();
 
   if (websiteUrl === "") {
-    const notification = document.createElement("div");
-    notification.classList.add("alert", "alert-primary");
-    notification.textContent = "Please enter a website URL";
+    if (!notificationShown) {
+      const notification = document.createElement("div");
+      notification.classList.add("alert", "alert-primary");
+      notification.textContent = "Please enter a website URL";
 
-    const container = document.getElementById("notification-container");
-    container.appendChild(notification);
+      const container = document.getElementById("notification-container");
+      container.appendChild(notification);
 
-    // Remove the notification after 3 seconds
-    setTimeout(() => {
-      container.removeChild(notification);
-    }, 1000);
-
+      // Remove the notification after 3 seconds
+      setTimeout(() => {
+        container.removeChild(notification);
+        notificationDisplayed = false;
+      }, 1000);
+      notificationDisplayed = true;
+    }
     return;
   }
 
@@ -113,8 +118,6 @@ function addFavorite() {
   const newFavorite = { url: urlInput };
   favorites.push(newFavorite);
   saveFavorites(favorites);
-
-  document.getElementById("typeURL").value = "";
 }
 
 // This allows users to press enter to submit website
@@ -243,32 +246,38 @@ document.addEventListener("DOMContentLoaded", function () {
   loadGoals();
 });
 
+let notificationDisplayed = false;
+
 function addGoal() {
   const goalInput = document.getElementById("goalInput").value;
+  document.getElementById("goalInput").value = "";
 
-  if (goalInput.trim() === "") {
-    const notification = document.createElement("div");
-    notification.classList.add("alert", "alert-primary");
-    notification.textContent = "Please enter a Goal";
+  if (goalInput.trim() !== "") {
+    const goal = {
+      id: Date.now(),
+      text: goalInput,
+    };
 
-    const container = document.getElementById("notification-containerTwo");
-    container.appendChild(notification);
+    addGoalToUI(goal);
+    saveGoal(goal);
+  } else {
+    if (!notificationDisplayed) {
+      const notification = document.createElement("div");
+      notification.classList.add("alert", "alert-primary");
+      notification.textContent = "Please enter a goal";
 
-    // Remove the notification after 3 seconds
-    setTimeout(() => {
-      container.removeChild(notification);
-    }, 3000);
+      const container = document.getElementById("notification-containerTwo");
+      container.appendChild(notification);
 
-    return;
+      // Remove the notification after 3 seconds
+      setTimeout(() => {
+        container.removeChild(notification);
+        notificationDisplayed = false; // reset notificationDisplayed after removing the notification
+      }, 1000);
+
+      notificationDisplayed = true; // set notificationDisplayed to true after displaying the notification
+    }
   }
-
-  const goal = {
-    id: Date.now(),
-    text: goalInput,
-  };
-
-  addGoalToUI(goal);
-  saveGoal(goal);
 }
 
 function addGoalToUI(goal) {
