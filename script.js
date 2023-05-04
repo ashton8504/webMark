@@ -38,7 +38,7 @@ let notificationShown = false;
 
 function addFavorite() {
   let urlInput = document.getElementById("typeURL").value;
-  document.getElementById("typeURL").value = "";
+
   //if user doesnt input a valid website a message will appear
   const websiteInput = document.getElementById("typeURL");
   const websiteUrl = websiteInput.value.trim();
@@ -118,6 +118,8 @@ function addFavorite() {
   const newFavorite = { url: urlInput };
   favorites.push(newFavorite);
   saveFavorites(favorites);
+
+  document.getElementById("typeURL").value = "";
 }
 
 // This allows users to press enter to submit website
