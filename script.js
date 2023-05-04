@@ -52,7 +52,7 @@ function addFavorite() {
     // Remove the notification after 3 seconds
     setTimeout(() => {
       container.removeChild(notification);
-    }, 3000);
+    }, 1000);
 
     return;
   }
@@ -76,7 +76,7 @@ function addFavorite() {
     this.onerror = null;
     this.src = "https://via.placeholder.com/64x64?text=No+Icon";
   };
-  // img.style.borderRadius = "30%";
+
   img.style.width = "66px";
   img.style.height = "66px";
   a.appendChild(img);

@@ -4,18 +4,18 @@
 
 body {
   border-color: #333333; /* add this line */
-  font-family: 'Barlow', sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 .container {
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-width: 100%;
-max-width: 100%;
-margin: 0 auto;
-padding: 20px;
-border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .container > * {
@@ -28,10 +28,12 @@ h1 {
   border-bottom: 1px solid lavenderblush;
   width: 18%;
   margin: 0 auto;
+  font-family: 'Barlow', sans-serif;
 }
 
 .form-label {
     font-size: 40px;
+    font-family: monospace, sans-serif;
 }
 
 .form-outline{
