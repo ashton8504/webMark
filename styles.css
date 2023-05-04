@@ -25,10 +25,10 @@ body {
 
 h1 {
   text-align: center;
-  border-bottom: 1px solid lavenderblush;
+  border-bottom: 2px solid lavenderblush;
   width: 18%;
   margin: 0 auto;
-  font-family: 'Barlow', sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 .form-label {
@@ -36,6 +36,14 @@ h1 {
     font-family: monospace, sans-serif;
 }
 
+footer {
+    text-align: center;
+    border-bottom: 2px solid lavenderblush;
+    width: 18%;
+    margin: auto;
+    padding: 10px;
+  }
+  
 .form-outline{
   width: 300px;
   margin: 0 auto;

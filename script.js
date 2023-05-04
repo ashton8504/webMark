@@ -246,29 +246,29 @@ document.addEventListener("DOMContentLoaded", function () {
 function addGoal() {
   const goalInput = document.getElementById("goalInput").value;
 
-  if (goalInput.trim() !== "") {
-    const goal = {
-      id: Date.now(),
-      text: goalInput,
-    };
+  if (goalInput.trim() === "") {
+    const notification = document.createElement("div");
+    notification.classList.add("alert", "alert-primary");
+    notification.textContent = "Please enter a Goal";
 
-    addGoalToUI(goal);
-    saveGoal(goal);
+    const container = document.getElementById("notification-containerTwo");
+    container.appendChild(notification);
 
-    document.getElementById("goalInput").value = "";
+    // Remove the notification after 3 seconds
+    setTimeout(() => {
+      container.removeChild(notification);
+    }, 3000);
 
-    const notificationContainer = document.getElementById(
-      "goalNotificationContainer"
-    );
-    notificationContainer.innerHTML = "Goal added successfully!";
-    notificationContainer.className = "notification-container success";
-  } else {
-    let notificationContainer = document.getElementById(
-      "goalNotificationContainer"
-    );
-    notificationContainer.innerHTML = "Please enter a valid goal.";
-    notificationContainer.className = "notification-container error";
+    return;
   }
+
+  const goal = {
+    id: Date.now(),
+    text: goalInput,
+  };
+
+  addGoalToUI(goal);
+  saveGoal(goal);
 }
 
 function addGoalToUI(goal) {
