@@ -224,3 +224,49 @@ ul#favoriteList li:hover {
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
+
+
+/* Desktop styles */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {
+    flex-basis: 50%;
+  }
+  
+  .url {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .btn-group {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  /* Mobile styles */
+  
+  @media (max-width: 600px) {
+    .container {
+      display: block;
+    }
+  
+    .item {
+      flex-basis: 100%;
+    }
+  
+    .url {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .btn-group {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
