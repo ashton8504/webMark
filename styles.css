@@ -248,25 +248,18 @@ ul#favoriteList li:hover {
     margin-bottom: 10px;
   }
   
-  /* Mobile styles */
-  
-  @media (max-width: 600px) {
-    .container {
-      display: block;
+/* mobile screens */
+@media (max-width: 576px) {
+    h1 {
+    width: 100% ;
+    margin: 0 ;
     }
-  
-    .item {
-      flex-basis: 100%;
+    
+    .container-goals {
+    margin-top: 20px ;
     }
-  
-    .url {
-      display: block;
-      margin-bottom: 10px;
+    
+    #favoriteList {
+    margin-bottom: 20px ;
     }
-  
-    .btn-group {
-      display: block;
-      margin-bottom: 20px;
     }
-  }
-  
