@@ -26,7 +26,7 @@ body {
 h1 {
   text-align: center;
   border-bottom: 2px solid lavenderblush;
-  width: 18%;
+  width: 45%;
   margin: 0 auto;
   font-family: monospace, sans-serif;
   text-shadow: 1px 1px 1px #000, 1px 1px 2.5px rgb(210, 210, 246);
@@ -54,6 +54,11 @@ footer {
   border: 4px solid #ddc5c5;
   border-radius: 5px;
 }
+
+.form-outline {
+    margin: 20px;
+}
+
 
 .form-control{
     text-align: center;
