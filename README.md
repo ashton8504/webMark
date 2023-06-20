@@ -1,6 +1,7 @@
 # Webmarks
 
-Webmarks is a web application that simplifies the process of accessing frequently visited websites by allowing users to create a customized dashboard. The application's responsive design ensures it can be used on different screen sizes without compromising functionality or user experience. Users can save links to their favorite websites and access them quickly with a single click.
+
+- Webmarks is a web application that simplifies the process of accessing frequently visited websites by allowing users to create a customized dashboard. The application's responsive design ensures it can be used on different screen sizes without compromising functionality or user experience. Users can save links to their favorite websites and access them quickly with a single click.
 
 ## Features
 
